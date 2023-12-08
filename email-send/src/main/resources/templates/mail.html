@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> <!--需要添加thymeleaf的命名空间-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p th:text="${msg}">替代文本</p>
+<!--替代文本与http://baidu.com将会被控制器类指定的目标数据替换-->
+<a href="http://baidu.com" th:href="${link}">Home</a> <br/>
+<a href="https://ahzoo.cn">{{ title }}</a> <br/>
+
+
+</body>
+
+</html>

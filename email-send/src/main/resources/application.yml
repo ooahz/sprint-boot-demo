@@ -1,0 +1,19 @@
+spring:
+  mail:
+    # 配置 SMTP 服务器地址
+    host: smtp.qq.com
+    # 发送者邮箱
+    username: ooahz@qq.com
+    # 邮箱密码（即邮件授权码）
+    password: xxxxxx
+    # 邮箱端口号（QQ邮箱为465或587）
+    port: 587
+    # 默认的邮件编码为UTF-8
+    default-encoding: UTF-8
+    # 配置SSL 加密工厂
+    properties:
+      mail:
+        smtp:
+          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+        # 开启Debug
+        debug: true

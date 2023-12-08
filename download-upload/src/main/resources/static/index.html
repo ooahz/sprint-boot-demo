@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ahzoo</title>
+</head>
+<body>
+
+使用表单对多个文件上传：
+<form action="/uploadList" enctype="multipart/form-data" method="post">
+    <input type="file" name="files">
+    <input type="file" name="files">
+    <input type="file" name="files"></form>
+<br/>
+<input type="submit">
+</form>
+
+<br/>
+<br/>
+使用ajax请求对单个文件上传：<br/>
+<input id="upload" type="file" ref="upload" accept="image/jpeg,image/jpg,image/png" onchange="uploadFile(event)"><br/>
+
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript">
+
+    function uploadFile(e) {
+//      获取file
+        let file = e.target.files[0]
+
+        let filedata = new FormData()
+        filedata.append("file", file)
+
+        axios.post("/upload", filedata)
+        .then(function (res) {
+        })
+    }
+</script>
+</html>
